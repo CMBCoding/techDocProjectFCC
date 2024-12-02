@@ -1,0 +1,552 @@
+* {
+  background-color: #141617;
+  color: #FFFFFF;
+  font-family: Lucida Console, 'Courier New', Courier, monospace;
+}
+
+/*Making my own declarations to use as universal  values for properties*/
+:root {
+  --ecto-green: #53E836;
+  --shadow-gray: #36454F;
+  --dead-red: #8E0000;
+}
+
+body {
+    font-size: 100%;
+    text-align: center;
+    margin: auto;
+    text-wrap: wrap;
+  } 
+
+p.normal {
+    font-variant: normal;
+}
+  
+p.small {
+    font-variant: small-caps;
+}
+
+nav {
+  display: block;
+}
+
+#main-doc {
+  position: absolute;
+  margin-right: auto;
+  margin-left: 200px;
+}
+
+#navbar {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  border-right: solid 2px #FFFFFF;
+  border-bottom: solid 2px #FFFFFF;
+  background-color: #141617;
+  outline: groove var(--ecto-green);
+  z-index: 3;
+}
+
+.nav-emblem {  
+  float: left;
+  clear: left;
+  height: 20px;
+  width: 20px;
+  margin: 0;
+}
+.nav_list_item {
+  width: 150px;
+  text-align: center;
+}
+
+/*Media Query for resizing the content and elements when the window size changes*/
+@media screen and (max-width: 800px) {
+#main-doc {
+  position: static;
+  margin: 0;
+}
+.nav_icon {
+  display: hidden;
+}
+#navbar {
+  position: sticky;
+  display: inline-block;
+  top: 0;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  border-right: solid 2px #FFFFFF;
+  border-bottom: solid 2px #FFFFFF;
+  background-color: #141617;
+  outline: groove var(--ecto-green);
+}
+.nav_list_item {
+  display: inline;
+  float: left;
+}
+.bio .seance_says {
+  text-align: inherit;
+  text-wrap: wrap;
+  overflow: auto;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.powers {
+  text-size-adjust:inherit;
+}
+.main-section {
+  min-width: fit-content;
+}
+footer {
+  margin-top: 50px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  border-top: solid 2px #FFFFFF;
+  outline: groove var(--ecto-green);
+}
+}
+/* End of Media Query*/
+
+.nav_icon {
+  margin-top: 10px;
+  width: 50px;
+  height: 50px;
+  align-items: center;
+}
+
+.nav_header {
+  margin-left: 5px;
+  padding: 5px;
+  margin-bottom: 5px;
+  border-right: solid 2px var(--ecto-green);
+  border-bottom: solid 2px var(--ecto-green);
+ }
+
+ul {
+  list-style-type: none;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+/*Hover in the style of the original Index V4 doc*/
+.nav_list_item:hover {
+  color: var(--ecto-green);
+  text-decoration: none;
+  border-left: 3px solid #FFFFFF; 
+ } 
+
+ .nav_list_item:hover a {
+  color: var(--ecto-green);
+  background-color: transparent;
+  text-decoration: none;
+  cursor: pointer;
+ }
+
+ li a {
+  display: block;
+  text-decoration: none;
+  width: 130px;
+ }
+
+ a:active {
+  color: var(--ecto-green);
+  text-decoration: none;
+ }
+
+ a:visited {
+  color: #FFFFFF;
+  text-decoration: none;
+ }
+
+ li, ul {
+  margin-left: 5px;
+  padding: 5px;
+  text-align: center;
+ }
+
+ .header-area {
+  position: fixed;
+  z-index: 2;
+  text-wrap: wrap;
+ }
+
+ section > h1 {
+  color: var(--ecto-green); 
+  display: block;
+  text-align: center;
+  border:2px solid var(--ecto-green); 
+  padding: 5px; 
+  margin: 5px;
+  box-shadow: 4px 5px var(--shadow-gray);
+  z-index: 1;
+  } 
+
+.main-section {
+  border-left: solid 2px var(--ecto-green);
+  border-bottom: solid 2px var(--ecto-green);
+  display: block;
+  min-width: 300px;
+  box-shadow: 4px 5px #36454F;
+  width: 80vw;
+  margin-top: 15px;
+  margin-right: auto;
+  margin-left: auto;
+ }
+
+ /* div {
+  width: 320px;
+  height: 50px;
+  padding: 10px;
+  border: 5px solid gray;
+  margin: 0;
+} */
+
+ .rogue_name {
+  padding-top: 10px;
+  padding-left: 10px;
+  text-align: left;
+  font-style: italic;
+  font-weight: bold;
+  font-size: larger;
+  text-decoration-line: underline;
+ }
+
+ .profile_pic {
+  display: flex;
+  align-items: left;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100px;
+  height: 100px;
+  border: solid 2px var(--ecto-green);
+  border-radius: 15px 0px 15px 0px;
+  box-shadow: 4px 5px var(--shadow-gray);
+ }
+
+ /*This is a test of utilizing background-image and size together 
+ with the hover to produce a neat hover effect on roll over*/
+ /*Everything is styled exactly like .profile_pic but adds the background-images and 
+ background-size to stand in for the <img> tag used for the standard profiles*/
+ .profile_hover_remedy {
+  display: flex;
+  align-items: left;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100px;
+  height: 100px;
+  border: solid 2px var(--ecto-green);
+  border-radius: 15px 0px 15px 0px;
+  background-image: url('images/Remedy.png'); 
+  background-size: contain;
+  box-shadow: 4px 5px var(--shadow-gray);
+  transition: background-image 0.5s ease-in-out; /*Sets the pace of the transition between images*/
+ }
+
+ .profile_hover_remedy:hover {
+  background-image: url('images/RemedyDeceased.png');
+  border: solid 2px var(--dead-red);
+  border-radius: 15px 0px 15px 0px;
+  box-shadow: 4px 5px #FFFFFF;
+ }
+
+ .profile_hover_honeycomb {
+  display: flex;
+  align-items: left;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100px;
+  height: 100px;
+  border: solid 2px var(--ecto-green);
+  border-radius: 15px 0px 15px 0px;
+  background-image: url('images/Honeycomb.jpg'); 
+  background-size: contain;
+  box-shadow: 4px 5px var(--shadow-gray);
+  transition: background-image 0.5s ease-in-out; /*Sets the pace of the transition between images*/
+ }
+
+ .profile_hover_honeycomb:hover {
+  background-image: url('images/HoneycombDeceased.png');
+  border: solid 2px var(--dead-red);
+  border-radius: 15px 0px 15px 0px;
+  box-shadow: 4px 5px #FFFFFF;
+ }
+
+ .profile_hover_babydoll {
+  display: flex;
+  align-items: left;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100px;
+  height: 100px;
+  border: solid 2px var(--ecto-green);
+  border-radius: 15px 0px 15px 0px;
+  background-image: url('images/GhostOrchid.png'); 
+  background-size: contain;
+  box-shadow: 4px 5px var(--shadow-gray);
+  transition: background-image 0.5s ease-in-out; /*Sets the pace of the transition between images*/
+ }
+
+ .profile_hover_babydoll:hover {
+  background-image: url('images/GhostOrchidDeceased.png');
+  border: solid 2px var(--dead-red);
+  border-radius: 15px 0px 15px 0px;
+  box-shadow: 4px 5px #FFFFFF;
+ }
+
+ /*End of Hover Test*/
+
+
+ .emblem {
+  height: 35px;
+  width: 35px;
+  padding-bottom: 10px;
+  display: inline;
+ }
+
+.status {
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 0;
+  text-align: left;
+  font-weight: bold;
+ }
+
+ .status_in_custody {
+  font-style: italic;
+  font-weight: bold;
+  color: greenyellow;
+ }
+
+ .status_at_large {
+  font-style: italic;
+  font-weight: bold;
+  color: rgb(237, 102, 24);
+ }
+
+ .status_unknown {
+  font-style: italic;
+  font-weight: bold;
+  color: rgb(149, 141, 141);
+ }
+
+ .status_deceased {
+  font-style: italic;
+  text-decoration: line-through white;
+  font-weight: bold;
+  color: rgb(229, 228, 226);
+ }
+
+ .threat_level  {
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: auto;
+  text-align: left;
+  font-weight: bold;
+ }
+
+ .alert_high {
+  font-style: italic;
+  font-weight: bold;
+  color: red;
+ }
+
+ .alert_med {
+  font-style: italic;
+  font-weight: bold;
+  color: yellow;
+ }
+
+ .alert_low {
+  font-style: italic;
+  font-weight: bold;
+  color: greenyellow;
+ }
+
+ .powers_list {
+  text-align: left;
+  display: flex;
+  justify-content: left;
+  font-weight: bold;
+ }
+
+ .powers {
+  text-align: left;
+  font-style: italic;
+  font-size: medium;
+  border-left: solid 5px var(--ecto-green);
+ }
+
+ .divider {
+  width: 80%;
+  border: 1px solid var(--ecto-green);
+ }
+
+ /*The following three classes work together to create a dropdown menu that appears on mouseover */
+ .dropdown {
+  position: relative;
+  text-align: left;
+  display: block;
+ }
+
+ .dropdown-content {
+  display: none;
+  position: inherit;
+  right: 0;
+  min-width: 160px;
+ }
+
+ .dropdown-content-image {
+  display: none;
+  position: inherit;
+  right: 0;
+  min-width: 160px;
+ }
+
+ .dropdown:hover .dropdown-content {
+  display: block;
+ }
+
+ .dropdown:hover .dropdown-content-image {
+  display: block;
+ }
+ /*End of the dropdown section*/
+
+ .bio {
+  display: flex;
+  justify-content: left;
+  text-align: justify;
+  font-size: medium;
+  padding: 5px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color: #141617;
+  color: #FFFFFF;
+}
+
+ .seance_says {
+  font-size: 80%;
+  font-style: italic;
+  display: block;
+  color: 	#B284BE;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+
+form {
+    border: var(--ecto-green);
+    display: block;
+    min-width: 300px;
+    box-shadow: 4px 5px var(--shadow-gray);
+    width: 80vw;
+    margin: auto;
+}
+  
+  p {
+  color: #FFFFFF; 
+  text-align: center;
+  min-width: 300px;
+  width: 80vw;
+  margin: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  } 
+
+  label {
+    display: block;
+    margin: 1px;
+  }
+
+  h1 {
+  color: var(--ecto-green); 
+  text-align: center;
+  border:2px solid var(--ecto-green); 
+  padding: 5px; 
+  margin: 5px;
+  box-shadow: 4px 5px var(--shadow-gray);
+  } 
+  
+  h2 {
+  color: var(--ecto-green); 
+  text-align: center;
+  border:2px solid var(--ecto-green); 
+  padding: 5px; 
+  margin: 5px;
+  } 
+  
+  h2:hover {
+   color: #FFFFFF;
+   background-color: var(--ecto-green);
+   text-decoration: none;
+   border:2px solid #FFFFFF; 
+  } 
+
+  input, option, select {
+    background-color: #71706E;
+    color: #FFFFFF;
+  }
+
+  ::placeholder {
+    color: #A9A9A9;
+  }
+
+  strong {
+    color: #FFFFFF;
+    background-color: var(--shadow-gray);
+  }
+
+  textarea {
+    display: block;
+    background-color: #71706E;
+    color: #FFFFFF;
+  }
+
+  legend {
+    display: inline;
+  }
+
+  fieldset {
+    padding: 1em;
+    box-shadow: 1.5px 1.5px 1.5px var(--ecto-green) inset;
+    border: none;
+    padding: 0.5em;
+  }
+
+  fieldset:last-of-type {
+    box-shadow: 1.5px 1.5px 1.5px var(--ecto-green) inset;
+  }
+  
+  button {
+    color: var(--ecto-green);
+    font-family: Lucida Console;
+    font-size: medium;
+    text-align: center;
+    background-color: #141617;
+    border: 2px solid var(--ecto-green);
+    height: 40px;
+    width: 220px;
+    display: block;
+    margin: auto;
+  }
+
+  button:hover {
+   color: #FFFFFF;
+   background-color: var(--ecto-green);
+   text-decoration: none;
+   border:2px solid #FFFFFF; 
+   cursor: pointer;
+  }
+
+
